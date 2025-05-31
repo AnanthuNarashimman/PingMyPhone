@@ -7,7 +7,7 @@ import LoginPage from './Pages/LoginPage.jsx';
 import Step1 from './Components/Step1.jsx';
 import Step2 from './Components/Step2.jsx';
 import DashBoard from './Pages/DashBoard.jsx';
-import ContactPage from './Pages/Contactpage.jsx';
+import ContactPage from './Pages/ContactPage.jsx';
 import ReminderPage from './Pages/ReminderPage.jsx';
 import ProfilePage from './Pages/ProfilePage.jsx';
 
