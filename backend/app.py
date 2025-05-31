@@ -362,10 +362,4 @@ def deleteReminder():
 
 
 if __name__ == '__main__':
-    from scheduler import start_scheduler
-
-    # Only start scheduler in the actual server process (not the reloader)
-    if os.environ.get("WERKZEUG_RUN_MAIN") == "true":
-        threading.Thread(target=start_scheduler, daemon=True).start()
-
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run()
