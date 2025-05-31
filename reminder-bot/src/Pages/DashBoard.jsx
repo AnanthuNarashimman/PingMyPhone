@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar.jsx";
-import AnnouncementIcon from "../Components/announcementIcon.jsx";
+import AnnouncementIcon from "../Components/AnnouncementIcon.jsx";
 import { useUser } from '../Context/UserContext.jsx'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faBarsProgress } from "@fortawesome/free-solid-svg-icons";
