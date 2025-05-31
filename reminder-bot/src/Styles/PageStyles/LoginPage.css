@@ -1,0 +1,293 @@
+.logpage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logpage .imgarea {
+    width: 55%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.tele {
+    position: absolute;
+    width: 200px !important;
+    height: auto;
+    top: 53%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.logpage .imgarea img {
+    width: 85%;
+    height: auto;
+}
+
+.logpage .formarea {
+    width: 45%;
+    background: #0077ff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+    position: relative;
+}
+
+.formarea .desarea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    font-family: 'Figtree';
+}
+
+.desarea h1 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 2.8rem;
+    text-shadow: 1px 2px 4px #0000005c;
+}
+
+.desarea p {
+    font-size: 22px;
+    color: #ECE9EF;
+    text-align: center;
+}
+
+.formarea .form-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-top: -20%;
+}
+
+.form-wrapper .form-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200%;
+    flex-shrink: 0;
+    transform: translateX(25%);
+    transition: .4s ease-in-out;
+}
+
+.formarea .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 50%;
+    margin-top: 25%;
+}
+
+.formarea .form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 80%;
+}
+
+.form h2 {
+    color: #ECE9EF;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.form .formdiv {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formdiv label {
+    position: absolute;
+    top: 25%;
+    left: 18%;
+    color: #666;
+    font-family: 'Nunito sans';
+    pointer-events: none;
+    transition: .3s ease;
+    font-weight: 500;
+}
+
+.form form input {
+    width: 70%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #ECE9EF;
+    padding: 10px 15px;
+    box-shadow: 3px 4px 3px #00000025;
+}
+
+.form form p {
+    color: #ECE9EF;
+    font-size: 17px;
+}
+
+.form form a {
+    color: #FFB22C;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.actionbutton {
+    position: relative;
+    overflow: hidden;
+    width: 30%;
+    margin-top: 30px;
+    font-family: 'Nunito sans';
+    font-size: 19px;
+    font-weight: bold;
+    color: #4635b1;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    background: white;
+    transition: .5s ease;
+}
+
+.actionbutton::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    /* background-color: yellow; */
+    background: #FFB22C;
+    z-index: -1;
+    transition: width 0.5s ease, height 0.5s ease;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 100%;
+}
+
+.actionbutton:hover {
+    color: #fff;
+}
+
+.actionbutton:hover::before {
+    width: 300%;
+    height: 300%;
+}
+
+.custom-alert {
+    color: #fff;
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    border-radius: 15px;
+    z-index: 1000;
+}
+
+.success {
+    background: green;
+}
+
+.loading-box {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+    width: 25%;
+    background: #ECE9EF;
+    padding: 15px;
+    border-radius: 15px;
+    z-index: 1000;
+}
+
+.spinner {
+    border: 4px solid #ccc;
+    border-top: 4px solid #0077ff;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.error {
+    background: rgb(240, 65, 65);
+}
+
+.info {
+    background: #666666bc;
+    color: #fff !important;
+}
+
+@media (max-width: 678px) {
+    .imgarea {
+        display: none !important;
+    }
+
+    .formarea {
+        width: 100% !important;
+    }
+
+    .formarea .desarea {
+        top: 6%;
+    }
+
+    .formarea .form {
+        width: 90% !important;
+    }
+
+    .formarea .form form {
+        width: 100% !important;
+    }
+
+    .form form input {
+        width: 80%;
+    }
+
+    .formdiv label {
+        left: 15%;
+    }
+
+    .custom-alert {
+        width: 80% !important;
+    }
+
+    .loading-box {
+        width: 75%;
+    }
+}

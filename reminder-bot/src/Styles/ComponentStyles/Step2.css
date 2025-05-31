@@ -1,0 +1,22 @@
+.alert {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 16px;
+    margin-top: 20px;
+    border: 1px solid #ffeeba;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    font-family: 'Nunito sans';
+  }
+  
+  .alert a {
+    color: #856404;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  
+  .alert strong {
+    font-weight: bold;
+  }
+  

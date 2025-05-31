@@ -1,0 +1,143 @@
+.navbar {
+  width: 20%;
+  height: 100vh;
+  background-color: #0077ff;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar.closed {
+  width: 70px;
+}
+
+.navbar .toggle-icon {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: 3%;
+}
+
+.navbar .icon {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: opacity 0.3s;
+}
+
+.navbar.closed .icon {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .icon .arrow {
+  color: #f0f0f0;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.navbar .navitems {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  margin-top: 30px;
+  margin-bottom: auto;
+  transition: all 0.3s;
+}
+
+.navitems a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.navitems a:hover {
+  background-color: #4635b1;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.navitems a span {
+  transition: opacity 0.3s ease;
+}
+
+.navbar.closed .navitems a span {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.profile-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #ECE9EF;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.navbar.closed .profile-button {
+  flex-direction: column;
+}
+
+.navbar.closed .proftext {
+  display: none;
+}
+
+.profimg img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.proftext h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.proftext h4 {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #f2f2f2;
+  font-weight: 400;
+}
+
+@media (max-width: 678px) {
+  .navbar {
+    width: 70%;
+    height: 100%;
+  }
+
+  .navbar.closed {
+    width: 60px;
+  }
+}
+

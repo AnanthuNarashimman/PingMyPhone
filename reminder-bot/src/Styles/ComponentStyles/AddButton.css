@@ -1,0 +1,22 @@
+.addButton {
+    position: fixed;
+    right: 2%;
+    bottom: 3%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #fff;
+    background: #0077cc;
+    border: 3px solid #0077cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.addButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 1px 3px 2px #00000065;
+}
