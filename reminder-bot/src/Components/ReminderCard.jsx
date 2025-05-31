@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faClock, faTrash } from '@fortawesome/free-solid-svg-icons';
-import '../styles/Componentstyles/ReminderCard.css';
+import '../styles/ComponentStyles/ReminderCard.css';
 import axios from 'axios';
 
 function ReminderCard({ refresh }) {
