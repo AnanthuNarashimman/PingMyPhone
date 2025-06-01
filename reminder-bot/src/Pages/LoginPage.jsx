@@ -61,7 +61,7 @@ function LoginPage() {
     e.preventDefault();
     try {
       setRegistering(true);
-      const res = await axios.post('http://localhost:5000/register', signupData);
+      const res = await axios.post('https://pingmyphone.onrender.com/register', signupData);
       showAlert(res.data.message || '✅ Registered successfully!', 'success');
     } catch (err) {
       const errorMessage =
@@ -77,12 +77,12 @@ function LoginPage() {
     e.preventDefault();
     try {
       setLogging(true);
-      const response = await axios.post('http://localhost:5000/login', loginData, {
+      const response = await axios.post('https://pingmyphone.onrender.com/login', loginData, {
         withCredentials: true
       });
       showAlert(response.data.message || '✅ Logged in successfully!', 'success');
 
-      const userRes = await axios.get('http://localhost:5000/test', {
+      const userRes = await axios.get('https://pingmyphone.onrender.com/test', {
         withCredentials: true,
       });
 

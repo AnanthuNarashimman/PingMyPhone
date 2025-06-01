@@ -27,7 +27,7 @@ app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(days=1)
 # Proper CORS configuration for cookies
 CORS(app, 
      supports_credentials=True,  
-     origins=["http://localhost:5173"],
+     origins=["https://ping-my-phone.vercel.app"],
      allow_headers=["Content-Type"],
      methods=["GET", "POST", "OPTIONS"])
 
