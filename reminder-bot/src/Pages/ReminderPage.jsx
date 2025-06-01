@@ -41,7 +41,7 @@ function ReminderPage() {
     e.preventDefault();
     console.log('Reminder sent to backend:', reminderData);
     try {
-      const response = await axios.post('http://localhost:5000/addReminder', reminderData, {
+      const response = await axios.post('https://pingmyphone.onrender.com/addReminder', reminderData, {
         withCredentials: true
       });
       console.log(response.data);

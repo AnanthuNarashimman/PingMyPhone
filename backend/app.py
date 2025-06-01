@@ -143,6 +143,7 @@ def login():
         session["telegram"] = user_data.get("telegramID")
         session.modified = True
 
+        print(session.get('user_id'))
         return jsonify({
             "message": "Login successful",
             "first_login": first_login

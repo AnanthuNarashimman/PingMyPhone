@@ -101,7 +101,7 @@ const ProfilePage = () => {
   const handleOldPasswordCheck = async () => {
     setVerifying(true);
     try {
-      const response = await axios.post('http://localhost:5000/checkPassword', {
+      const response = await axios.post('https://pingmyphone.onrender.com/checkPassword', {
         oldPassword: passwordData.oldPassword
       }, { withCredentials: true });
 
@@ -121,7 +121,7 @@ const ProfilePage = () => {
   async function PasswordChange() {
     if (passwordData.newPassword === passwordData.confirmPassword) {
       try {
-        const response = await axios.post('http://localhost:5000/changePassword', {
+        const response = await axios.post('https://pingmyphone.onrender.com/changePassword', {
           newPassword: passwordData.newPassword
         }, { withCredentials: true });
         

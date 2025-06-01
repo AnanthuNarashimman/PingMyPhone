@@ -17,7 +17,7 @@ function ReminderCard({ refresh }) {
   const fetchReminders = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/getReminder', {
+      const response = await axios.get('https://pingmyphone.onrender.com/getReminder', {
         withCredentials: true,
       });
 
