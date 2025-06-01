@@ -18,7 +18,7 @@ from firebase_config import db, user_collection, reminder_collection
 app = Flask(__name__)
 
 # Use environment variable for secret key in production
-app.secret_key = 'HelloWorld'
+app.secret_key = os.environ.get('FLASK_SECRET_KEY')
 app.config["SESSION_PERMANENT"] = True
 app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(days=1)
 
@@ -143,7 +143,7 @@ def login():
         session["telegram"] = user_data.get("telegramID")
         session.modified = True
 
-        print(session.get('user_id'))
+        print("Session:",  session.get('user_id'))
         return jsonify({
             "message": "Login successful",
             "first_login": first_login
