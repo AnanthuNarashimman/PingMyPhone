@@ -53,7 +53,7 @@ function ReminderCard({ refresh }) {
     if (!confirmDelete) return;
 
     try {
-      const response = await axios.post("http://localhost:5000/deleteReminder",
+      const response = await axios.post("https://pingmyphone.onrender.com/deleteReminder",
         {
           reminderID: id
         }, {
@@ -79,7 +79,7 @@ function ReminderCard({ refresh }) {
 
   const submitEdit = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/updateReminder", {
+      const response = await axios.post("https://pingmyphone.onrender.com/updateReminder", {
         newMessageBody: editMessage,
         reminderID: editReminderId
       }, { withCredentials: true });
