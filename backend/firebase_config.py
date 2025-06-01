@@ -1,12 +1,15 @@
 import firebase_admin
 from firebase_admin import credentials, firestore
-from dotenv import load_dotenv
 import os
+import json
 
-load_dotenv()
+# Load the JSON content from GitHub Actions secret
+firebase_key_json = os.getenv("FIREBASE_CREDENTIALS")
 
-# Firebase Admin SDK setup
-firebase_key = os.getenv("FIREBASE_CREDENTIALS")
+# Parse JSON string into a Python dict
+firebase_key = json.loads(firebase_key_json)
+
+# Initialize Firebase app
 cred = credentials.Certificate(firebase_key)
 firebase_admin.initialize_app(cred)
 
