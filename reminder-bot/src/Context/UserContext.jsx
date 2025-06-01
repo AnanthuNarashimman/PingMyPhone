@@ -13,7 +13,7 @@ export const UserProvider = ({ children }) => {
   // Function to fetch user data from backend
   const fetchUser = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/test', { withCredentials: true });
+      const res = await axios.get('https://pingmyphone.onrender.com/test', { withCredentials: true });
       if (res.data.message === 'Session is working') {
         setUser({
           username: res.data.username,
@@ -34,7 +34,7 @@ export const UserProvider = ({ children }) => {
   const login = async (usermail, password) => {
     try {
       const res = await axios.post(
-        'http://localhost:5000/login',
+        'https://pingmyphone.onrender.com/login',
         { usermail, password },
         { withCredentials: true }
       );
@@ -52,7 +52,7 @@ export const UserProvider = ({ children }) => {
   const addTelegramID = async (telegramID) => {
     try {
       const res = await axios.post(
-        'http://localhost:5000/addTelegramID',
+        'https://pingmyphone.onrender.com/addTelegramID',
         { telegramID },
         { withCredentials: true }
       );
@@ -77,7 +77,7 @@ export const UserProvider = ({ children }) => {
   const updateProfile = async (username, telegramID) => {
     try {
       const res = await axios.post(
-        'http://localhost:5000/profileChange',
+        'https://pingmyphone.onrender.com/profileChange',
         { username, telegramID },
         { withCredentials: true }
       );
@@ -104,7 +104,7 @@ export const UserProvider = ({ children }) => {
   const changePassword = async (newPassword) => {
     try {
       const res = await axios.post(
-        'http://localhost:5000/changePassword',
+        'https://pingmyphone.onrender.com/changePassword',
         { newPassword },
         { withCredentials: true }
       );
@@ -121,7 +121,7 @@ export const UserProvider = ({ children }) => {
   const logout = async () => {
     try {
       const res = await axios.post(
-        'http://localhost:5000/logout',
+        'https://pingmyphone.onrender.com/logout',
         {},
         { withCredentials: true }
       );
