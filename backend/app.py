@@ -22,6 +22,11 @@ app.secret_key = os.environ.get('FLASK_SECRET_KEY')
 app.config["SESSION_PERMANENT"] = True
 app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(days=1)
 
+# --- ADD THESE LINES ---
+app.config["SESSION_COOKIE_SECURE"] = True     # Essential for HTTPS and SameSite='None'
+app.config["SESSION_COOKIE_HTTPONLY"] = True   # Good security: prevents JavaScript access to the cookie
+app.config["SESSION_COOKIE_SAMESITE"] = 'None'
+
 # More comprehensive CORS configuration
 CORS(app, 
      supports_credentials=True,  
