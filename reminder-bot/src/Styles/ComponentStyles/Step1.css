@@ -245,3 +245,35 @@
     font-size: 18px;
     border-radius: 50%;
 }
+
+@media (max-width: 678px) {
+    .tele-id-add .img {
+        display: none;
+    }
+
+    .tele-id-add {
+        width: 98%;
+        padding: 10px 8px;
+        margin-top: 10px;
+    }
+
+    .tele-id-add .text {
+        width: 80%;
+    }
+
+    .text h1 {
+        font-size: 30px;
+    }
+
+    .text input {
+        width: 80%;
+    }
+
+    .text button {
+        width: 50% !important;
+    }
+
+    .nextbutton {
+        top: 1.5%;
+    }
+}
