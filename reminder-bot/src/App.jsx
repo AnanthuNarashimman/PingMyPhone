@@ -10,21 +10,22 @@ import DashBoard from './Pages/DashBoard.jsx';
 import ContactPage from './Pages/ContactPage.jsx';
 import ReminderPage from './Pages/ReminderPage.jsx';
 import ProfilePage from './Pages/ProfilePage.jsx';
+import LandingPage from './Pages/LandingPage.jsx';
 
 
 export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<LoginPage />} />
-        <Route path='/home' element={<HomePage />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/connect-tele' element={<Step1 />} />
-        <Route path='/activate-bot' element={<Step2 />} />
-        <Route path='/dash-board' element={<DashBoard />} />
-        <Route path='/contact' element={<ContactPage />} />
-        <Route path='/reminders' element={<ReminderPage />} />
-        <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/' element={<LandingPage />} />
+        <Route path='https://ping-my-phone.vercel.app/home' element={<HomePage />} />
+        <Route path='https://ping-my-phone.vercel.app/login' element={<LoginPage />} />
+        <Route path='https://ping-my-phone.vercel.app/connect-tele' element={<Step1 />} />
+        <Route path='https://ping-my-phone.vercel.app/activate-bot' element={<Step2 />} />
+        <Route path='https://ping-my-phone.vercel.app/dash-board' element={<DashBoard />} />
+        <Route path='https://ping-my-phone.vercel.app/contact' element={<ContactPage />} />
+        <Route path='https://ping-my-phone.vercel.app/reminders' element={<ReminderPage />} />
+        <Route path='https://ping-my-phone.vercel.app/profile' element={<ProfilePage />} />
       </Routes>
     </Router>
   );
