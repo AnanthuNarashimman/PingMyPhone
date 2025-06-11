@@ -18,14 +18,14 @@ export default function App() {
     <Router>
       <Routes>
         <Route path='/' element={<LandingPage />} />
-        <Route path='https://ping-my-phone.vercel.app/home' element={<HomePage />} />
-        <Route path='https://ping-my-phone.vercel.app/login' element={<LoginPage />} />
-        <Route path='https://ping-my-phone.vercel.app/connect-tele' element={<Step1 />} />
-        <Route path='https://ping-my-phone.vercel.app/activate-bot' element={<Step2 />} />
-        <Route path='https://ping-my-phone.vercel.app/dash-board' element={<DashBoard />} />
-        <Route path='https://ping-my-phone.vercel.app/contact' element={<ContactPage />} />
-        <Route path='https://ping-my-phone.vercel.app/reminders' element={<ReminderPage />} />
-        <Route path='https://ping-my-phone.vercel.app/profile' element={<ProfilePage />} />
+        <Route path='/home' element={<HomePage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/connect-tele' element={<Step1 />} />
+        <Route path='/activate-bot' element={<Step2 />} />
+        <Route path='/dash-board' element={<DashBoard />} />
+        <Route path='/contact' element={<ContactPage />} />
+        <Route path='/reminders' element={<ReminderPage />} />
+        <Route path='/profile' element={<ProfilePage />} />
       </Routes>
     </Router>
   );
