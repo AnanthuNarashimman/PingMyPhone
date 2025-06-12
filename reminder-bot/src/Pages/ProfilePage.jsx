@@ -1,6 +1,6 @@
 import { useUser } from '../Context/UserContext.jsx';
 import '../Styles/PageStyles/ProfilePage.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../Components/Navbar.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faKey } from '@fortawesome/free-solid-svg-icons';
@@ -8,6 +8,20 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const ProfilePage = () => {
+  useEffect(() => {
+    logCheck();
+  }, []);
+
+  async function logCheck() {
+    const reponse = await axios.get('https://pingmyphone.onrender.com/status-check',
+      { withCredentials: true }
+    )
+
+    if (reponse.data.logged) {
+      navigate('/dash-board');
+    }
+  }
+
   const [alertmsg, setAlertMsg] = useState('');
   const [alertType, setAlertType] = useState('');
   const [updating, setUpdating] = useState(false);
@@ -51,7 +65,7 @@ const ProfilePage = () => {
       try {
         // Use the updateProfile method from context
         const result = await updateProfile(formData.username, formData.telegramID);
-        
+
         if (result.success) {
           ShowAlert("Profile updated successfully", 'success');
         } else {
@@ -124,12 +138,12 @@ const ProfilePage = () => {
         const response = await axios.post('https://pingmyphone.onrender.com/changePassword', {
           newPassword: passwordData.newPassword
         }, { withCredentials: true });
-        
+
         ShowAlert("Password changed successfully", 'success');
         setShowPasswordModal(false);
         setIsVerified(false);
         setPasswordData({ oldPassword: '', newPassword: '', confirmPassword: '' });
-      } catch(err) {
+      } catch (err) {
         console.log(err);
         ShowAlert("Password change failed", 'error');
       }
@@ -144,7 +158,7 @@ const ProfilePage = () => {
         <div className="loading-box">
           <div className="spinner">
           </div>
-            <p>Updating your profile...</p>
+          <p>Updating your profile...</p>
         </div>
       )}
 

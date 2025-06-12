@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar.jsx";
 import ReminderCard from "../Components/ReminderCard.jsx";
 import AddButton from "../Components/AddButton.jsx";
@@ -7,6 +8,21 @@ import "../Styles/PageStyles/DashBoard.css";
 import axios from "axios";
 
 function ReminderPage() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    logCheck();
+  }, []);
+
+  async function logCheck() {
+    const reponse = await axios.get('https://pingmyphone.onrender.com/status-check',
+      { withCredentials: true }
+    )
+
+    if (reponse.data.logged) {
+      navigate('/dash-board');
+    }
+  }
   const [alertmsg, setAlertMsg] = useState('');
   const [alertType, setAlertType] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);

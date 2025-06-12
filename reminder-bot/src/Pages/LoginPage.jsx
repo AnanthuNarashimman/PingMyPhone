@@ -7,8 +7,26 @@ import '../Styles/PageStyles/LoginPage.css';
 import { useUser } from '../Context/UserContext.jsx'; // Import the UserContext
 
 function LoginPage() {
+
+  useEffect(() => {
+    logCheck();
+  }, []);
+
+
   const navigate = useNavigate();
   const { setUser } = useUser();
+
+
+
+  async function logCheck() {
+    const reponse = await axios.get('https://pingmyphone.onrender.com/status-check',
+      { withCredentials: true }
+    )
+
+    if (reponse.data.logged) {
+      navigate('/dash-board');
+    }
+  }
 
   const [signupData, setSignupData] = useState({
     username: '',

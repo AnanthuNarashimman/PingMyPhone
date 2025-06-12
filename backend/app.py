@@ -210,6 +210,13 @@ def test():
     except Exception as e:
         print(f"Test route error: {str(e)}")
         return jsonify({"message": "Internal server error"}), 500
+    
+@app.route('/status-check', methods = ["GET"])
+def statusCheck():
+    if 'user_id' in session:
+        return jsonify({"logged": True})
+    else:
+        return jsonify({"logged": False})
 
 @app.route('/profileChange', methods=['POST'])
 def profileChange():

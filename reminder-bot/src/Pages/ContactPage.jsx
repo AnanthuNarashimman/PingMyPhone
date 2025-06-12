@@ -1,8 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../Styles/PageStyles/ContactPage.css";
 import Navbar from "../Components/Navbar";
 
 function ContactPage() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    logCheck();
+  }, []);
+
+  async function logCheck() {
+    const reponse = await axios.get('https://pingmyphone.onrender.com/status-check',
+      { withCredentials: true }
+    )
+
+    if (reponse.data.logged) {
+      navigate('/dash-board');
+    }
+  }
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,7 +57,7 @@ function ContactPage() {
   return (
     <>
 
-    <div className="body"></div>
+      <div className="body"></div>
       <Navbar />
 
       <div className="contact-page">

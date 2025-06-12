@@ -1,21 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar.jsx";
 import AnnouncementIcon from "../Components/AnnouncementIcon.jsx";
-import { useUser } from '../Context/UserContext.jsx'; 
+import { useUser } from '../Context/UserContext.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faBarsProgress } from "@fortawesome/free-solid-svg-icons";
 import '../Styles/PageStyles/DashBoard.css';
-import axios from 'axios'; 
+import axios from 'axios';
 
 function DashBoard() {
+    useEffect(() => {
+        logCheck();
+    }, []);
+
+    async function logCheck() {
+        const reponse = await axios.get('https://pingmyphone.onrender.com/status-check',
+            { withCredentials: true }
+        )
+
+        if (reponse.data.logged) {
+            navigate('/dash-board');
+        }
+    }
+
     const navigate = useNavigate();
     const { user } = useUser();
 
     const [alertmsg, setAlertMsg] = useState('');
     const [alertType, setAlertType] = useState('');
 
-    const [isModalOpen, setIsModalOpen] = useState(false); 
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [reminderData, setReminderData] = useState({
         message: '',
         messageBody: '',
@@ -36,23 +50,23 @@ function DashBoard() {
     };
 
     function ShowAlert(message, type = 'success') {
-    setAlertMsg(message);
-    setAlertType(type);
-    console.log(message);
-    setTimeout(() => {
-      setAlertMsg('');
-      setAlertType('');
-    }, 3000);
+        setAlertMsg(message);
+        setAlertType(type);
+        console.log(message);
+        setTimeout(() => {
+            setAlertMsg('');
+            setAlertType('');
+        }, 3000);
     }
 
-    
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('Reminder sent to backend:', reminderData);
         try {
             const response = await axios.post('https://pingmyphone.onrender.com/addReminder', reminderData,
-                {withCredentials: true}
+                { withCredentials: true }
             );
             console.log(response.data)
             const resMessage = response.data.message;
@@ -98,7 +112,7 @@ function DashBoard() {
                         <div className="action-text">
                             <h2>Manage Reminders</h2>
                             <p>Easily view, update, reschedule, or delete your existing reminders in one place.</p>
-                            <button onClick={() => {navigate('/reminders')}}>Manage</button>
+                            <button onClick={() => { navigate('/reminders') }}>Manage</button>
                         </div>
                     </div>
                 </div>
@@ -151,8 +165,8 @@ function DashBoard() {
             )}
 
             {alertmsg && (
-        <div className={`custom-alert ${alertType}`}>{alertmsg}</div>
-      )}
+                <div className={`custom-alert ${alertType}`}>{alertmsg}</div>
+            )}
         </>
     );
 }
