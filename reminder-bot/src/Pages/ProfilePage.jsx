@@ -17,8 +17,8 @@ const ProfilePage = () => {
       { withCredentials: true }
     )
 
-    if (reponse.data.logged) {
-      navigate('/dash-board');
+    if (!reponse.data.logged) {
+      navigate('/login');
     }
   }
 

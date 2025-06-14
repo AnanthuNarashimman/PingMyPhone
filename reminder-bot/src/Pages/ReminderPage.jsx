@@ -19,8 +19,8 @@ function ReminderPage() {
       { withCredentials: true }
     )
 
-    if (reponse.data.logged) {
-      navigate('/dash-board');
+    if (!reponse.data.logged) {
+      navigate('/login');
     }
   }
   const [alertmsg, setAlertMsg] = useState('');
