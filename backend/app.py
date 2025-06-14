@@ -20,7 +20,7 @@ app = Flask(__name__)
 # Use environment variable for secret key in production
 app.secret_key = os.environ.get('FLASK_SECRET_KEY')
 app.config["SESSION_PERMANENT"] = True
-app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(days=1)
+app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(days=5)
 
 # --- ADD THESE LINES ---
 app.config["SESSION_COOKIE_SECURE"] = True     # Essential for HTTPS and SameSite='None'

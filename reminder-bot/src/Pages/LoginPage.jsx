@@ -19,12 +19,20 @@ function LoginPage() {
 
 
   async function logCheck() {
-    const reponse = await axios.get('https://pingmyphone.onrender.com/status-check',
-      { withCredentials: true }
-    )
-
-    if (reponse.data.logged) {
-      navigate('/dash-board');
+    try {
+      const response = await axios.get('https://pingmyphone.onrender.com/status-check',
+        { withCredentials: true, timeout: 30000 } // longer timeout for cold starts
+      )
+      if (response.data.logged) {
+        navigate('/dash-board');
+      }
+    } catch (error) {
+      if (error.code === 'ECONNABORTED' || error.response?.status === 502) {
+        // Could show a "waking up server..." message
+        console.log('Server starting up, please wait...');
+        const message = 'Server starting up, please wait';
+        showAlert(message, 'info');
+      }
     }
   }
 
