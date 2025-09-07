@@ -444,6 +444,7 @@ const ProfilePage = () => {
         )}
       </div>
 
+
       {alertmsg && (
         <div className={`alert-notification ${alertType}`}>
           <div className="alert-content">
@@ -457,5 +458,6 @@ const ProfilePage = () => {
     </>
   );
 };
+
 
 export default ProfilePage;
