@@ -1,3 +1,5 @@
+<img width="100%" height="161" alt="PingMyPhone" src="https://github.com/user-attachments/assets/92f19124-58ac-4332-b4b7-81ea2bfd673c" />
+
 # 📅 Telegram Reminder Web Application
 A full-stack web application that allows users to schedule personalized reminders through Telegram bot integration, with support for Indian Standard Time (IST) scheduling.
 ### 🚀 Live Demo
